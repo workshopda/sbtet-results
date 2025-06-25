@@ -1,0 +1,7 @@
+{
+    "url": "https://sbtet.ap.gov.in/APSBTET/gradeWiseResults.do",
+    "input_id": "aadhar1",
+    "dropdown_id": "grade2",
+    "submit_xpath": "//input[@value='SUBMIT']",
+    "result_div_id": "printDiv"
+}
