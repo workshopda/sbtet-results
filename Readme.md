@@ -1,4 +1,4 @@
-# SBTET Results Downloader
+# SBTET Results Downloader (Darion Edition)
 
 ## Overview
 SBTET Results Downloader is a Streamlit-based web application designed to automate the process of downloading and analyzing student results from the SBTET (State Board of Technical Education and Training) website. It uses Selenium for web scraping, processes the results, generates reports in Excel and PDF formats, and optionally uploads the results to Google Drive.
@@ -20,10 +20,28 @@ SBTET Results Downloader is a Streamlit-based web application designed to automa
 - Google Chrome and ChromeDriver installed and accessible in your system PATH
 - `wkhtmltopdf` installed for PDF generation (optional but recommended)
 
+### Installing wkhtmltopdf
+
+#### On Windows
+1. Download the installer from the official site: https://wkhtmltopdf.org/downloads.html
+2. Run the installer and follow the setup instructions.
+3. Add the installation directory (e.g., `C:\Program Files\wkhtmltopdf\bin`) to your system PATH environment variable.
+4. Restart your terminal or IDE to apply the PATH changes.
+
+#### On Linux (Ubuntu/Debian)
+```bash
+sudo apt-get update
+sudo apt-get install -y wkhtmltopdf
+```
+
+#### On Linux (Other distributions)
+Refer to your distribution's package manager or download from the official site: https://wkhtmltopdf.org/downloads.html
+
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
+sudo apt-get install -y wkhtmltopdf
 
 ## Usage
 
