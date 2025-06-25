@@ -1,98 +1,98 @@
 # SBTET Results Downloader (Darion Edition)
 
 ## Overview
-SBTET Results Downloader is a Streamlit-based web application designed to automate the process of downloading and analyzing student results from the SBTET (State Board of Technical Education and Training) website. It uses Selenium for web scraping, processes the results, generates reports in Excel and PDF formats, and optionally uploads the results to Google Drive.
+SBTET Results Downloader is a sophisticated Streamlit-based application designed to automate the retrieval and analysis of student results from the State Board of Technical Education and Training (SBTET) website. Leveraging Selenium for robust web scraping, the application processes data efficiently, generates comprehensive reports in Excel and PDF formats, and supports seamless integration with Google Drive for file uploads.
 
-## Features
-- Supports multiple input modes: Range of PINs, Single PIN, or CSV file upload.
-- Scrapes detailed student results including subject-wise marks and GPA.
-- Generates Excel reports summarizing all results.
-- Generates individual PDF reports for each student (requires `wkhtmltopdf`).
-- Provides analytics and visualizations such as pass/fail distribution, branch performance, GPA distribution, and top performers.
-- Uploads generated files to a specified Google Drive folder.
-- Configurable web scraping parameters for advanced users.
-- Multi-threaded scraping for faster processing.
+## Key Features
+- Multiple input modes: Range of PINs, Single PIN, or CSV file upload.
+- Detailed extraction of student results, including subject-wise marks and GPA.
+- Generation of consolidated Excel reports summarizing all results.
+- Creation of individual PDF reports per student (requires `wkhtmltopdf`).
+- Interactive analytics and visualizations: pass/fail distribution, branch performance, GPA distribution, and top performers.
+- Google Drive integration for direct upload of generated files.
+- Advanced configuration options for web scraping parameters.
+- Multi-threaded processing for enhanced performance and scalability.
 
 ## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
-- Google Chrome and ChromeDriver installed and accessible in your system PATH
-- `wkhtmltopdf` installed for PDF generation (optional but recommended)
+- Google Chrome browser and matching ChromeDriver installed and accessible via system PATH
+- `wkhtmltopdf` for PDF generation (optional but strongly recommended)
 
 ### Installing wkhtmltopdf
 
-#### On Windows
-1. Download the installer from the official site: https://wkhtmltopdf.org/downloads.html
-2. Run the installer and follow the setup instructions.
+#### Windows
+1. Download the installer from the official website: [https://wkhtmltopdf.org/downloads.html](https://wkhtmltopdf.org/downloads.html)
+2. Execute the installer and follow the on-screen instructions.
 3. Add the installation directory (e.g., `C:\Program Files\wkhtmltopdf\bin`) to your system PATH environment variable.
-4. Restart your terminal or IDE to apply the PATH changes.
+4. Restart your terminal or development environment to apply the changes.
 
-#### On Linux (Ubuntu/Debian)
+#### Linux (Ubuntu/Debian)
 ```bash
 sudo apt-get update
 sudo apt-get install -y wkhtmltopdf
 ```
 
-#### On Linux (Other distributions)
-Refer to your distribution's package manager or download from the official site: https://wkhtmltopdf.org/downloads.html
+#### Other Linux Distributions
+Refer to your distribution’s package manager or download the appropriate package from the official website above.
 
-### Install dependencies
+### Dependency Installation
+Install the required Python packages using pip:
 ```bash
 pip install -r requirements.txt
 ```
-sudo apt-get install -y wkhtmltopdf
 
 ## Usage
 
-1. Run the Streamlit app:
+1. Launch the application:
 ```bash
 streamlit run app.py
 ```
 
-2. Use the sidebar to select the input mode:
-   - **Range**: Specify a base PIN, start suffix, and number of students.
-   - **Single**: Enter a single PIN.
-   - **CSV**: Upload a CSV or Excel file containing a column with PINs.
+2. Configure input mode via the sidebar:
+   - **Range**: Define a base PIN, starting suffix, and number of students.
+   - **Single**: Input a single PIN.
+   - **CSV**: Upload a CSV or Excel file containing PINs.
 
-3. Select the year/semester from the dropdown.
+3. Select the relevant year or semester.
 
-4. Choose download options:
-   - Generate Excel report
-   - Generate individual PDFs (requires `wkhtmltopdf`)
+4. Choose output options:
+   - Generate an Excel report.
+   - Generate individual PDF reports (requires `wkhtmltopdf`).
 
-5. (Optional) Adjust advanced settings such as target URL and HTML element identifiers.
+5. (Optional) Modify advanced settings such as target URL and HTML element selectors.
 
-6. Click **Start Process** to begin scraping and processing.
+6. Click **Start Process** to initiate scraping and data processing.
 
-7. After completion, download the results as Excel, PDFs, or a ZIP archive.
+7. Upon completion, download results as Excel, PDFs, or a consolidated ZIP archive.
 
-8. (Optional) Upload the results to a Google Drive folder by providing the folder ID.
+8. (Optional) Upload results to a Google Drive folder by specifying the folder ID.
 
 ## Configuration
 
-- The app saves scraping configuration in `config.json`.
-- Advanced users can modify the URL, input field IDs, dropdown IDs, and other selectors via the sidebar.
-- Maximum parallel downloads can be adjusted for performance tuning.
+- Scraping parameters are saved in `config.json`.
+- Advanced users can customize URL, input field IDs, dropdown selectors, and other parameters via the sidebar.
+- Adjust maximum parallel downloads to optimize performance.
 
 ## Output
 
-- Results are saved in a timestamped folder inside the `downloads` directory.
-- Excel report contains detailed student results.
-- PDFs contain formatted individual student result pages.
-- Analytics tabs provide visual insights into the data.
+- Results are stored in a timestamped directory within the `downloads` folder.
+- Excel reports provide detailed student data.
+- PDFs offer formatted individual student result pages.
+- Analytics tabs present insightful visualizations and summaries.
 
-## Google Drive Upload
+## Google Drive Integration
 
 - Requires a Google Cloud service account configured in Streamlit secrets (`secrets.toml`).
-- Upload files directly to a specified Google Drive folder by entering the folder ID.
+- Enables direct upload of generated files to a specified Google Drive folder.
 
 ## Troubleshooting
 
-- Ensure ChromeDriver version matches your installed Chrome browser.
-- Install `wkhtmltopdf` and ensure it is in your system PATH for PDF generation.
-- Check network connectivity to the SBTET website.
-- Review logs for errors during scraping or uploading.
+- Verify ChromeDriver version compatibility with your installed Chrome browser.
+- Ensure `wkhtmltopdf` is installed and included in your system PATH for PDF generation.
+- Confirm network connectivity to the SBTET website.
+- Review application logs for any scraping or upload errors.
 
 ## License
 
@@ -100,4 +100,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For support or inquiries, please contact the maintainer.
+For support or inquiries, please contact the project maintainer.
